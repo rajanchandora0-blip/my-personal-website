@@ -43,6 +43,77 @@ a{display:inline-block;background:#e1306c;color:white;padding:12px 20px;border-r
 <p>
   <a href=Agar%20Tum%20Saath%20Ho%20%28From%20Tamasha%29.mp3
 </p>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Music Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #101020;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    .song {
+      background: #22223b;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+    }
+    audio {
+      width: 100%;
+      margin: 10px 0;
+    }
+    a {
+      display: inline-block;
+      background: #00c853;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 My Music Website 🎵</h1>
+  <div id="songs"></div>
+
+  <script>
+    const songs = [
+      { name: "Song 1", file: "songs/song1.mp3" },
+      { name: "Song 2", file: "songs/song2.mp3" },
+      { name: "Song 3", file: "songs/song3.mp3" }
+    ];
+
+    const container = document.getElementById("songs");
+
+    songs.forEach(song => {
+      const item = document.createElement("div");
+      item.className = "song";
+
+      const title = document.createElement("h3");
+      title.textContent = song.name;
+
+      const player = document.createElement("audio");
+      player.controls = true;
+      player.src = song.file;
+      player.preload = "none";
+
+      const download = document.createElement("a");
+      download.href = song.file;
+      download.download = "";
+      download.textContent = "⬇ Download";
+
+      item.append(title, player, document.createElement("br"),
+                  download);
+      container.appendChild(item);
+    });
+  </script>
+</body>
+</html>
 </div>
 <div class="card">
   <h2>My Notes 📚</h2>
